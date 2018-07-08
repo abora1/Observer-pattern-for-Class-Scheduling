@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
+import java.util.ArrayList;
+
 import studentCoursesBackup.util.MyLogger;
 import studentCoursesBackup.util.MyLogger.DebugLevel;;
 public class FileProcessor {
@@ -49,7 +51,23 @@ public class FileProcessor {
 		}
 		return null;
 	}
-
+	public ArrayList<String> deleteFileRead(){
+		ArrayList<String> delEntries = new ArrayList<String>();
+		try{
+		String str = null;
+		while((str = br.readLine()) != null)
+			delEntries.add(str);
+		this.fileclose();
+		return delEntries;
+		}
+		catch(IOException e){
+			MyLogger.writeMessage("DELETE FILE CANNOT BE READ",
+					DebugLevel.FILE_PROCESSOR);
+			e.printStackTrace();
+			System.exit(0);
+		}
+		return null;
+	}
 	// closes the file when completes execution.
 	public void fileclose() {
 		try {

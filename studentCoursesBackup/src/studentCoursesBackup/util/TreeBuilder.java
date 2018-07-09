@@ -16,19 +16,18 @@ public class TreeBuilder {
 	public BST buildTree()
 	{
 		BST tree = new BST();
-		BST cloneTree1 = new BST();
-		BST cloneTree2 = new BST();
+		BST cloneTree1In = new BST();
+		BST cloneTree2In = new BST();
 		String st = "";
 		while((st = fp.readline()) != null){
-			String[] stringData = st.split(":");
-			Node node = tree.insert(Integer.parseInt(stringData[0]), stringData[1]);
-			Node clone1 = cloneTree1.insert(Integer.parseInt(stringData[0]), stringData[1]);
-			Node clone2 = cloneTree2.insert(Integer.parseInt(stringData[0]), stringData[1]);
+			Node node = tree.insert(Integer.parseInt(st.split(":")[0]), st.split(":")[1]);
+			Node clone1 = cloneTree1In.insert(Integer.parseInt(st.split(":")[0]), st.split(":")[1]);
+			Node clone2 = cloneTree2In.insert(Integer.parseInt(st.split(":")[0]), st.split(":")[1]);
 			node.Subscribe((ObserverI)clone1);
 			node.Subscribe((ObserverI)clone2);	
 		}
-		this.cloneTree1 = cloneTree1;
-		this.cloneTree2 = cloneTree2;
+		this.cloneTree1 = cloneTree1In;
+		this.cloneTree2 = cloneTree2In;
 		return tree;
 	}
 }

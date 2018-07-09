@@ -25,7 +25,7 @@ public class Node implements SubjectI,ObserverI {
     	
     	if(this.course.equals(course))
     	{
-    		System.out.println("\ndeleting course : " + course);
+    		//System.out.println("\ndeleting course : " + course);
     		this.setCourse("");
     	}
     }

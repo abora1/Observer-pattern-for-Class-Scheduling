@@ -27,7 +27,7 @@ public class Driver {
 			Results rs1=new Results();
 			tree.printNodes(rs);
 			t1.cloneTree1.printNodes(rs1);
-			//rs.writeToStdout();
+			rs.writeToStdout();
 			//rs1.writeToStdout();
 			rs.clear();
 			rs1.clear();
@@ -38,7 +38,7 @@ public class Driver {
 			tree.printNodes(rs);
 			t1.cloneTree1.printNodes(rs1);
 			rs.writeToStdout();
-			rs1.writeToStdout();
+			//rs1.writeToStdout();
 		}
 		catch(Exception e){
 			

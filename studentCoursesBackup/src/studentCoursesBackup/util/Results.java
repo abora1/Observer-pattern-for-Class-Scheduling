@@ -50,6 +50,9 @@ import java.util.ArrayList;
 		public void writeToStdout() {
 			System.out.println(resList + " \n");
 		}
+		public void clear(){
+			resList.removeAll(resList);
+		}
 	}
 
 

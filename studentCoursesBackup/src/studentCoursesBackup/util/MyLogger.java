@@ -8,7 +8,7 @@ public class MyLogger {
 
 		//enums for the Levels
 		public static enum DebugLevel {
-			CONSTRUCTOR, FILE_PROCESSOR, NONE, STATES, STATE_ACTION
+			CONSTRUCTOR, FILE_PROCESSOR, NONE, OBSERVERS, STATE_ACTION
 		};
 
 		private static DebugLevel debugLevel;
@@ -20,7 +20,7 @@ public class MyLogger {
 				debugLevel = DebugLevel.STATE_ACTION;
 				break;
 			case 3:
-				debugLevel = DebugLevel.STATES;
+				debugLevel = DebugLevel.OBSERVERS;
 				break;
 			case 2:
 				debugLevel = DebugLevel.CONSTRUCTOR;

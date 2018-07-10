@@ -18,6 +18,7 @@ public class BST {
 		traverseBST(this.root);
 	}
 
+	// Traversing the tree to print all the nodes.
 	private void traverseBST(Node node) {
 		if (node != null) {
 			traverseBST(node.left);
@@ -26,6 +27,7 @@ public class BST {
 		}
 	}
 
+	// Sorting and Inserting New Nodes in terms of BNO.
 	private Node insert(Node node, Integer data, String courseData) {
 		if (node == null)
 			this.newNode = node = new Node(courseData, data);
@@ -39,6 +41,8 @@ public class BST {
 		return node;
 	}
 
+	// Function to insert new node in terms of BNO and Course without repeating
+	// values.
 	public Node insert(int data, String courseData) {
 		Node nodeOfInterest = search(root, data, courseData);
 		if (nodeOfInterest != null) {
@@ -58,6 +62,7 @@ public class BST {
 		return root == null;
 	}
 
+	// Function to delete particuplar course according to BNO AND COURSE.
 	public void deleteCourses(ArrayList<String> courses) {
 		for (String course : courses) {
 			int val = Integer.parseInt(course.split(":")[0]);

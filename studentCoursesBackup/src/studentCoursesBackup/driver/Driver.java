@@ -10,11 +10,14 @@ import studentCoursesBackup.util.MyLogger;
 
 public class Driver {
 	public static void main(String[] args) {
-		ArrayList<String> list = new<String> ArrayList();
+		ArrayList<String> list = new ArrayList<String>();
 		try {
-			// IT creates the Instances of the three trees,Reads the Input and Delete File
-			//Apply operations of these files and then also read the Output files to store the results.
-			//Creates Instances of the results class to stores the OBservers and The Main Tree.
+			// IT creates the Instances of the three trees,Reads the Input and
+			// Delete File
+			// Apply operations of these files and then also read the Output
+			// files to store the results.
+			// Creates Instances of the results class to stores the OBservers
+			// and The Main Tree.
 			if (args.length != 6) {
 				System.out
 						.println("Please Enter All Input,Delete and Output Files along with the debug value");
@@ -28,6 +31,12 @@ public class Driver {
 			int debug = Integer.parseInt(args[5]);
 			if (input == null || delete == null) {
 				System.out.println("THE INPUT OR DELETE FILE IS EMPTY");
+				System.exit(0);
+			}
+			if(debug>3 || debug<1)
+			{
+				System.out.println("The Debug Value is out of scope it should be Between 1 And 3");
+				System.out.println("1.FILE PROCESSOR\n2.CONSTRUCTOR \n3.OUTPUT DISPLAY");
 				System.exit(0);
 			}
 			MyLogger.setDebugValue(debug);

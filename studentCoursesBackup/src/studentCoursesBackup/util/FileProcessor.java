@@ -1,4 +1,5 @@
 package studentCoursesBackup.util;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -6,7 +7,9 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 
 import studentCoursesBackup.util.MyLogger;
-import studentCoursesBackup.util.MyLogger.DebugLevel;;
+import studentCoursesBackup.util.MyLogger.DebugLevel;
+
+;
 public class FileProcessor {
 	public FileProcessor() {
 	}
@@ -22,7 +25,7 @@ public class FileProcessor {
 				System.exit(0);
 			}
 			br = new BufferedReader(new FileReader(f));
-			MyLogger.writeMessage("New Input File has Been Accepted",
+			MyLogger.writeMessage("New File has Been Accepted",
 					DebugLevel.FILE_PROCESSOR);
 
 		} catch (IOException e) {
@@ -33,7 +36,8 @@ public class FileProcessor {
 		}
 
 	}
-//this method returns a single line from the file to user.
+
+	// this method returns a single line from the file to user.
 	public String readline() {
 		try {
 			String s = null;
@@ -51,16 +55,16 @@ public class FileProcessor {
 		}
 		return null;
 	}
-	public ArrayList<String> deleteFileRead(){
+
+	public ArrayList<String> deleteFileRead() {
 		ArrayList<String> delEntries = new ArrayList<String>();
-		try{
-		String str = null;
-		while((str = br.readLine()) != null)
-			delEntries.add(str);
-		this.fileclose();
-		return delEntries;
-		}
-		catch(IOException e){
+		try {
+			String str = null;
+			while ((str = br.readLine()) != null)
+				delEntries.add(str);
+			this.fileclose();
+			return delEntries;
+		} catch (IOException e) {
 			MyLogger.writeMessage("DELETE FILE CANNOT BE READ",
 					DebugLevel.FILE_PROCESSOR);
 			e.printStackTrace();
@@ -68,6 +72,7 @@ public class FileProcessor {
 		}
 		return null;
 	}
+
 	// closes the file when completes execution.
 	public void fileclose() {
 		try {
